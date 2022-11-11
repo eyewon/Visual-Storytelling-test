@@ -15,7 +15,68 @@
   </head>
 
   <body>
-    <h1 id="headline">Visual Storytelling</h1>
+    <button
+      onclick="document.getElementById('demo').innerHTML='hello JavaScript!'"
+    >
+      hello
+    </button>
+    <p id="demo">demo</p>
+    <p>demo2</p>
+
+    <h2>HTML 속성 업데이트하기</h2>
+
+    <p>Image 태그의 속성인 `src` 업데이트해서 파일을 바꾸기</p>
+
+    <button onclick="displayImg()">사진 ON</button>
+
+    <img id="myImage" src="./img/cloud.png" style="width: 100px" />
+
+    <button onclick="document.getElementById('myImage').style.display='none'">
+      사진 OFF
+    </button>
+
+    <script>
+      function displayImg() {
+        document.getElementById("myImage").src = "./img/cloud.png";
+        document.getElementById("myImage").style.display = "inline-block";
+      }
+    </script>
+
+    <h2>JavaScript 이벤트</h2>
+    <p>버튼 클릭해서 시간 보여주기</p>
+
+    <button onclick="displayDate()">지금 시간은?</button>
+
+    <script>
+      function displayDate() {
+        document.getElementById("time").innerHTML = Date();
+      }
+    </script>
+
+    <p id="time"></p>
+
+    <br />
+
+    <h2>If Else</h2>
+
+    <p>시간에 따른 인사:</p>
+
+    <p id="hi"></p>
+
+    <script>
+      const time = new Date().getHours();
+      let greeting;
+      if (time < 10) {
+        greeting = "Good morning";
+      } else if (time < 20) {
+        greeting = "Good day";
+      } else {
+        greeting = "Good evening";
+      }
+      document.getElementById("hi").innerHTML = greeting;
+    </script>
+
+    <!-- <h1 id="headline">Visual Storytelling</h1>
 
     <div id="box"></div>
 
@@ -40,11 +101,11 @@
         id="flag"
         src="https://static01.nyt.com/newsgraphics/2018/02/14/royal-wedding/assets/corgi-run.gif"
       />
-      <!-- <img
+      <img
         id="flag-new"
         src="https://static01.nyt.com/newsgraphics/2018/02/14/royal-wedding/assets/corgi-run.gif"
-      /> -->
+      />
       <img src="./img/cloud.png" />
-    </div>
+    </div> -->
   </body>
 </html>
